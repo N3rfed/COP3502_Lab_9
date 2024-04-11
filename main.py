@@ -10,3 +10,18 @@ def encoder(password):
             continue
         encoded_password += str(increment)
     return encoded_password
+
+def main():
+    while True:
+        print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
+        user_choice = input("Please enter an option:")
+        if user_choice == "1":
+            encode = input("Please enter your password to encode:")
+            encoder(encode)
+            print("Your password has been encoded and stored!\n")
+        elif user_choice == "2":
+            pass
+        elif user_choice == "3":
+            quit()
+if __name__ == "__main__":
+    main()
