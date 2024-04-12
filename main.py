@@ -10,6 +10,18 @@ def encoder(password):
             continue
         encoded_password += str(increment)
     return encoded_password
+def decoder(password):
+    decoder = ""
+    decoder += str(password)
+    decoded_password = ""
+    for i in range(len(decoder)):
+        decrement = int(decoder[i])
+        decrement -= 3
+        if decrement < 0:
+            decoded_password += str(decrement)[-1]
+            continue
+        decoded_password += str(decrement)
+    return decoded_password
 
 def main():
     while True:
@@ -17,10 +29,11 @@ def main():
         user_choice = input("Please enter an option:")
         if user_choice == "1":
             encode = input("Please enter your password to encode:")
-            encoder(encode)
+            passcode = encoder(encode)
             print("Your password has been encoded and stored!\n")
         elif user_choice == "2":
-            pass
+           decoded_passcode = decoder(passcode)
+           print("The encoded password is ", passcode, "and the original password is ", decoded_passcode)
         elif user_choice == "3":
             quit()
 if __name__ == "__main__":
