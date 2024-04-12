@@ -11,18 +11,7 @@ def encoder(password):
         encoded_password += str(increment)
     return encoded_password
 def decoder(password):
-    decoder = ""
-    decoder += str(password)
-    decoded_password = ""
-    for i in range(len(decoder)):
-        decrement = int(decoder[i])
-        decrement -= 3
-        if decrement < 0:
-            decoded_password += str(decrement)[-1]
-            continue
-        decoded_password += str(decrement)
-    return decoded_password
-
+    pass
 def main():
     while True:
         print("Menu\n-------------\n1. Encode\n2. Decode\n3. Quit\n")
